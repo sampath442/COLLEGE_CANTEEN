@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>College Canteen Ordering System</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <i class="fas fa-utensils"></i>
+            <h1>College Canteen</h1>
+        </div>
+        <nav>
+            <ul class="nav-links">
+                <li>
+                    <a href="index.html" title="Home" class="nav-icon">
+                        <i class="fas fa-home"></i>
+                    </a>
+                </li>
+                <li class="cart-icon">
+                    <i class="fas fa-shopping-cart"></i>
+                    <span id="cart-count">0</span>
+                </li>
+            </ul>
+        </nav>
+    </header>
+    
+    
+    
+
+    <main>
+        <section class="menu-section">
+            <h2>Our Menu</h2>
+            <div class="category-tabs">
+                <button class="tab-btn active" data-category="all">All Items</button>
+                <button class="tab-btn" data-category="breakfast">Breakfast</button>
+                <button class="tab-btn" data-category="lunch">Lunch</button>
+                <button class="tab-btn" data-category="snacks">Snacks</button>
+                <button class="tab-btn" data-category="beverages">Beverages</button>
+            </div>
+            <div class="menu-items" id="menu-items">
+                <!-- Menu items will be loaded here by JavaScript -->
+                <p>Loading menu items...</p>
+            </div>
+        </section>
+
+        <section class="cart-section">
+            <h2>Your Order</h2>
+            <div class="cart-items" id="cart-items">
+                <p class="empty-cart-message">Your cart is empty</p>
+            </div>
+            <div class="cart-summary">
+                <div class="summary-row">
+                    <span>Subtotal:</span>
+                    <span id="subtotal">₹0.00</span>
+                </div>
+                <div class="summary-row">
+                    <span>Tax (5%):</span>
+                    <span id="tax">₹0.00</span>
+                </div>
+                <div class="summary-row total">
+                    <span>Total:</span>
+                    <span id="total">₹0.00</span>
+                </div>
+                <button id="checkout-btn" disabled>Proceed to Checkout</button>
+            </div>
+        </section>
+    </main>
+
+    <!-- Order Modal -->
+    <div class="modal" id="order-modal">
+        <div class="modal-content">
+            <span class="close-btn">&times;</span>
+            <h2>Order Confirmation</h2>
+            <div id="order-summary">
+                <!-- Order summary will be loaded here -->
+            </div>
+            <div class="student-info">
+                <h3>Student Information</h3>
+                <form id="student-form">
+                    <div class="form-group">
+                        <label for="name">Full Name:</label>
+                        <input type="text" id="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">Phone Number:</label>
+                        <input type="tel" id="phone" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="dorm">Dorm No:</label>
+                        <input type="text" id="dorm" required>
+                    </div>
+                    <button type="submit" id="confirm-order-btn">Confirm Order</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Success Modal -->
+    <div class="modal" id="success-modal">
+        <div class="modal-content success-content">
+            <i class="fas fa-check-circle"></i>
+            <h2>Order Placed Successfully!</h2>
+            <p id="success-message">Your order has been received and will be ready shortly.</p>
+            <button id="close-success-btn">Close</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
